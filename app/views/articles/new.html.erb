@@ -1,0 +1,18 @@
+<div class="container w-50 mt-4 bg-light p-5 rounded-3">
+  <h1>New Article</h1>
+  <%= form_with scope: :article, url: articles_path, local: true do |form| %>
+    <p>
+      <%= form.label :title %><br>
+      <%= form.text_field :title, class: 'form-control' %>
+    </p>
+
+    <p>
+      <%= form.label :text %><br>
+      <%= form.text_area :text, class: 'form-control' %>
+    </p>
+
+    <div class="text-center">
+      <%= form.submit nil, :class => 'btn btn-success btn-block w-50 mx-auto' %>
+    </div>
+  <% end %>
+</div>
