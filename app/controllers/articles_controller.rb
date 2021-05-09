@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-
+  before_action :authenticate_user!
   def index
     @articles = Article.all
   end
@@ -26,13 +26,10 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    puts 'in update'
     @article = Article.find(params[:id])
-    puts 'before if'
     if @article.update(article_params)
       redirect_to articles_path
     else
-      puts 'false'
       render 'edit'
     end
   end
