@@ -1,0 +1,39 @@
+<div class="container w-50 mt-4 bg-light p-5 rounded-3">
+  <h1>Edit article</h1>
+
+  <%= form_with(model: @article, local: true) do |form| %>
+
+    <% if @article&.errors&.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@article.errors.count, "error") %> prohibited
+          this article from being saved:
+        </h2>
+        <ul>
+          <% @article.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mx-auto w-50">
+      <div>
+        <p><%= form.label :title %>
+          <%= form.text_field :title, class: "form-control" %>
+      </div>
+
+      <div>
+        <p><%= form.label :text %></p>
+        <%= form.text_area :text, class: "form-control mb-2" %>
+      </div>
+    </div>
+
+    <div class="text-center w-50 mx-auto">
+      <%= form.submit nil, :class => 'btn btn-success btn-block w-50 mx-auto' %>
+    </div>
+
+  <% end %>
+
+  <a class="btn btn-secondary" href="<%= articles_path %>">Back</a>
+</div>

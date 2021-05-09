@@ -1,0 +1,17 @@
+<div class="container w-50 mt-4 bg-light p-5 rounded-3">
+<div class="d-flex justify-content-between align-items-center">
+  <h2>Show Post ID: <span class="text-primary"><%= @article.id %></span></h2>
+  <div>
+    <a class="btn btn-primary bg-gradient" href="<%= articles_path %>">Show All Articles</a>
+  </div>
+</div>
+ <div class="p-4">
+    <h5 class="d-inline"><strong>Title:</strong></h5>
+    <span class="text-primary"><%= @article.title %></span>
+  </div>
+
+  <div class="p-4">
+  <h5 class="d-inline"><strong>Text:</strong></h5>
+    <span class="text-primary"><%= @article.text %></span>
+  </div>
+</div>
