@@ -17,9 +17,9 @@
       </div>
     <% end %>
 
-    <div class="mx-auto w-50">
+    <div class="mx-auto w-75">
       <div>
-        <p><%= form.label :title %>
+          <p><%= form.label :title %></p>
           <%= form.text_field :title, class: "form-control" %>
       </div>
 
@@ -27,12 +27,11 @@
         <p><%= form.label :text %></p>
         <%= form.text_area :text, class: "form-control mb-2" %>
       </div>
-    </div>
 
-    <div class="text-center w-50 mx-auto">
-      <%= form.submit nil, :class => 'btn btn-success btn-block w-50 mx-auto' %>
+      <div class="text-center w-75 mx-auto">
+        <%= form.submit nil, :class => 'btn btn-success btn-block w-50 mx-auto' %>
+      </div>
     </div>
-
   <% end %>
 
   <a class="btn btn-secondary" href="<%= articles_path %>">Back</a>

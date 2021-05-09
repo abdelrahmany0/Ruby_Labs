@@ -1,18 +1,18 @@
 <div class="container p-4">
-  <div class="bg-light rounded-lg p-4">
+  <div class="bg-light rounded-3 p-4">
     <div class="d-flex justify-content-between align-items-center">
       <h1>Listing articles</h1>
     <div>
       <a class="btn btn-success bg-gradient" href="<%= new_article_path %>">Create Article</a>
     </div>
     </div>
-    <table class="table table-hover">
+    <table class="table table-hover rounded-3">
       <thead>
       <tr>
         <th>ID</th>
         <th>Title</th>
         <th>Text</th>
-        <th>Action</th>
+        <th class="text-center">Action</th>
       </tr>
       </thead>
       <tbody>
@@ -21,9 +21,14 @@
           <td><%= article.id %></td>
           <td><%= article.title %></td>
           <td><%= article.text %></td>
-          <td class="pl-0">
-            <a class="btn btn-primary bg-gradient" href="<%= article_path(article) %>">Show Article</a>
-            <a class="btn btn-warning bg-gradient" href="<%= edit_article_path(article) %>">Edit Article</a>
+          <td class="text-center">
+              <a class="btn btn-primary bg-gradient" href="<%= article_path(article) %>">Show Article</a>
+              <a class="btn btn-warning bg-gradient" href="<%= edit_article_path(article) %>">Edit Article</a>
+<!--              <a class="btn btn-danger bg-gradient" href="<%#= edit_article_path(article) %>">Delete Article</a>-->
+              <%= link_to 'Destroy', article_path(article),
+                          method: :delete,
+                          data: { confirm: 'Are you sure?' },
+                          class: "btn btn-danger" %>
           </td>
         </tr>
       <% end %>
