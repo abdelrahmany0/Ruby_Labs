@@ -1,38 +1,45 @@
-<div class="container w-50 mt-4 bg-light p-5 rounded-3">
-  <h1>Edit article</h1>
+<!--<div class="container w-50 mt-4 bg-light p-5 rounded-3">-->
+<!--  <h1>Edit article</h1>-->
 
-  <%= form_with(model: @article, local: true) do |form| %>
+  <%#= form_with(model: @article, local: true) do |form| %>
 
-    <% if @article&.errors&.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@article.errors.count, "error") %> prohibited
-          this article from being saved:
-        </h2>
-        <ul>
-          <% @article.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+    <%# if @article&.errors&.any? %>
+<!--      <div id="error_explanation">-->
+<!--        <h2>-->
+<!--          <%#= pluralize(@article.errors.count, "error") %> prohibited-->
+<!--          this article from being saved:-->
+<!--        </h2>-->
+<!--        <ul>-->
+          <%# @article.errors.full_messages.each do |msg| %>
+<!--            <li><%#= msg %></li>-->
+          <%# end %>
+<!--        </ul>-->
+<!--      </div>-->
+    <%# end %>
 
-    <div class="mx-auto w-75">
-      <div>
-          <p><%= form.label :title %></p>
-          <%= form.text_field :title, class: "form-control" %>
-      </div>
+<!--    <div class="mx-auto w-75">-->
+<!--      <div>-->
+<!--          <p><%#= form.label :title %></p>-->
+          <%#= form.text_field :title, class: "form-control" %>
+<!--      </div>-->
 
-      <div>
-        <p><%= form.label :text %></p>
-        <%= form.text_area :text, class: "form-control mb-2" %>
-      </div>
+<!--      <div>-->
+<!--        <p><%#= form.label :text %></p>-->
+        <%#= form.text_area :text, class: "form-control mb-2" %>
+<!--      </div>-->
 
-      <div class="text-center w-75 mx-auto">
-        <%= form.submit nil, :class => 'btn btn-success btn-block w-50 mx-auto' %>
-      </div>
-    </div>
-  <% end %>
+<!--      <div class="text-center w-75 mx-auto">-->
+        <%#= form.submit nil, :class => 'btn btn-success btn-block w-50 mx-auto' %>
+<!--      </div>-->
+<!--    </div>-->
+  <%# end %>
 
-  <a class="btn btn-secondary" href="<%= articles_path %>">Back</a>
-</div>
+<!--  <a class="btn btn-secondary" href="<%#= articles_path %>">Back</a>-->
+<!--</div>-->
+
+
+<h1>Edit article</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', articles_path %>

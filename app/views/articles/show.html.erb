@@ -1,17 +1,62 @@
-<div class="container w-50 mt-4 bg-light p-5 rounded-3">
-<div class="d-flex justify-content-between align-items-center">
-  <h2>Show Post ID: <span class="text-primary"><%= @article.id %></span></h2>
-  <div>
-    <a class="btn btn-primary bg-gradient" href="<%= articles_path %>">Show All Articles</a>
-  </div>
-</div>
- <div class="p-4">
-    <h5 class="d-inline"><strong>Title:</strong></h5>
-    <span class="text-primary"><%= @article.title %></span>
-  </div>
+<!--<div class="container w-50 mt-4 bg-light p-5 rounded-3">-->
+<!--  <div class="d-flex justify-content-between align-items-center">-->
+<!--    <h2>Show Post ID: <span class="text-primary"><%#= @article.id %></span></h2>-->
+<!--    <div>-->
+<!--      <a class="btn btn-primary bg-gradient" href="<%#= articles_path %>">Show All Articles</a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="p-4">-->
+<!--    <h5 class="d-inline"><strong>Title:</strong></h5>-->
+<!--    <span class="text-primary"><%#= @article.title %></span>-->
+<!--  </div>-->
 
-  <div class="p-4">
-  <h5 class="d-inline"><strong>Text:</strong></h5>
-    <span class="text-primary"><%= @article.text %></span>
-  </div>
+<!--  <div class="p-4">-->
+<!--    <h5 class="d-inline"><strong>Text:</strong></h5>-->
+<!--    <span class="text-primary"><%#= @article.text %></span>-->
+<!--  </div>-->
+
+<!--  <h2>Comments</h2>-->
+  <%#= render @article.comments %>
+
+<!--  <h2>Add a comment:</h2>-->
+  <%#= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
+<!--    <p>-->
+<!--      <%#= form.label :commenter %><br>-->
+      <%#= form.text_field :commenter %>
+<!--    </p>-->
+<!--    <p>-->
+<!--      <%#= form.label :body %><br>-->
+      <%#= form.text_area :body %>
+<!--    </p>-->
+<!--    <p>-->
+      <%#= form.submit %>
+<!--    </p>-->
+  <%# end %>
+
+<!--  <%#= link_to 'Edit', edit_article_path(@article) %> |-->
+  <%#= link_to 'Back', articles_path %>
+
+<!--</div>-->
+
+
+
+<div class="container">
+  <p>
+    <strong>Title:</strong>
+    <%= @article.title %>
+  </p>
+
+  <p>
+    <strong>Text:</strong>
+    <%= @article.text %>
+  </p>
+
+  <h2>Comments</h2>
+  <%= render @article.comments %>
+
+  <h2>Add a comment:</h2>
+  <%= render 'comments/form' %>
+
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+  <%= link_to 'Back', articles_path %>
 </div>
