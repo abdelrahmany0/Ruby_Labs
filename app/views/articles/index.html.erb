@@ -22,13 +22,34 @@
           <td><%= article.title %></td>
           <td><%= article.text %></td>
           <td class="text-center">
-              <a class="btn btn-primary bg-gradient" href="<%= article_path(article) %>">Show Article</a>
+              <a class="btn btn-primary bg-gradient" href="<%= article_path(article) %>">Details</a>
               <a class="btn btn-warning bg-gradient" href="<%= edit_article_path(article) %>">Edit Article</a>
-<!--              <a class="btn btn-danger bg-gradient" href="<%#= edit_article_path(article) %>">Delete Article</a>-->
-              <%= link_to 'Destroy', article_path(article),
-                          method: :delete,
-                          data: { confirm: 'Are you sure?' },
-                          class: "btn btn-danger" %>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#article-<%= article.id %>">
+              Delete
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="article-<%= article.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete Article</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body d-flex">
+                    <p>Are you sure you want to delete article <strong class="text-primary"><%= article.title %></strong></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <%= link_to 'Destroy', article_path(article),
+                                method: :delete,
+                                class: 'btn btn-danger' %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </td>
         </tr>
       <% end %>
