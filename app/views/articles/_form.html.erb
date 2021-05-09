@@ -1,6 +1,6 @@
 <div class="container bg-light rounded-3 p-4">
   <%= form_with model: @article, local: true do |form| %>
-
+    <%#= form_with(model: [ @article, @article.user.build ], local: true) do |form| %>
     <% if @article.errors.any? %>
       <div id="error_explanation">
         <h2>

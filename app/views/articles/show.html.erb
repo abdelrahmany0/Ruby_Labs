@@ -46,9 +46,15 @@
     <%= @article.title %>
   </p>
 
+
   <p>
     <strong>Text:</strong>
     <%= @article.text %>
+  </p>
+
+  <p>
+    <strong>Created by:</strong>
+    <%= @article.user != nil ? @article.user.email : " " %>
   </p>
 
   <h2>Comments</h2>

@@ -1,6 +1,6 @@
 <p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
+  <strong>Created by:</strong>
+  <%= comment.user != nil ? comment.user.email : " " %>
 </p>
 
 <p>
