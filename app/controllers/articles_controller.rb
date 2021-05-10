@@ -1,10 +1,11 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!
   def index
+    puts current_user.id
     if user_signed_in?
-      puts "signed in"
+      puts 'signed in'
     else
-      puts "not signed in"
+      puts 'not signed in'
     end
     @articles = Article.all
   end
@@ -18,8 +19,9 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @article = @article.user.create(article_params)
+    # @user = User.find(params[:user_id])
+    # byebug
+    @article = Article.new(article_params.merge(user_id: current_user.id))
     # @article = Article.new(params.require(:article).permit(:title, :text))
     if @article.save
       redirect_to @article

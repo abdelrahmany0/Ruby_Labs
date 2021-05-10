@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-between align-items-center">
       <h1>Listing articles</h1>
       <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-      <p><%= current_user %></p>
+      <p><%= current_user.email %></p>
     <div>
       <a class="btn btn-success bg-gradient" href="<%= new_article_path %>">Create Article</a>
     </div>
