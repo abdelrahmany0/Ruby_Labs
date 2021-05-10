@@ -24,6 +24,8 @@
           <td><%= article.title %></td>
           <td><%= article.text %></td>
           <td class="text-center">
+            <% if can? :manage, article %>
+
               <a class="btn btn-primary bg-gradient" href="<%= article_path(article) %>">Details</a>
               <a class="btn btn-warning bg-gradient" href="<%= edit_article_path(article) %>">Edit Article</a>
             <!-- Button trigger modal -->
@@ -51,7 +53,7 @@
                 </div>
               </div>
             </div>
-
+            <% end %>
           </td>
         </tr>
       <% end %>

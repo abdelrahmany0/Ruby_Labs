@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, except: %i[api_show]
+  before_action :authenticate_user!, except: %i[api_show api api_index]
 
 
   def api_show
@@ -7,6 +7,10 @@ class ArticlesController < ApplicationController
     render json: @article
   end
 
+  def api_index
+    @articles = Article.all
+    render json: @articles
+  end
 
   def index
     if user_signed_in?
