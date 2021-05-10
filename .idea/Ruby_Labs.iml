@@ -16,6 +16,7 @@
     <orderEntry type="library" scope="PROVIDED" name="actionmailer (v5.2.6, ruby-2.7.3-p183) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionpack (v5.2.6, ruby-2.7.3-p183) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionview (v5.2.6, ruby-2.7.3-p183) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="active_model_serializers (v0.8.4, ruby-2.7.3-p183) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activejob (v5.2.6, ruby-2.7.3-p183) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activemodel (v5.2.6, ruby-2.7.3-p183) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v5.2.6, ruby-2.7.3-p183) [gem]" level="application" />
@@ -47,6 +48,7 @@
     <orderEntry type="library" scope="PROVIDED" name="i18n (v1.8.10, ruby-2.7.3-p183) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="io-like (v0.3.1, ruby-2.7.3-p183) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.11.2, ruby-2.7.3-p183) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jwt (v2.2.3, ruby-2.7.3-p183) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.9.1, ruby-2.7.3-p183) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.7.1, ruby-2.7.3-p183) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="marcel (v1.0.1, ruby-2.7.3-p183) [gem]" level="application" />

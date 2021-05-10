@@ -1,7 +1,14 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: %i[api_show]
+
+
+  def api_show
+    @article = Article.find(params[:id])
+    render json: @article
+  end
+
+
   def index
-    # puts current_user.id
     if user_signed_in?
       puts 'signed in'
     else
