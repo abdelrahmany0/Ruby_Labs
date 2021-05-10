@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!
   def index
-    puts current_user.id
+    # puts current_user.id
     if user_signed_in?
       puts 'signed in'
     else
